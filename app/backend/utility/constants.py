@@ -7,7 +7,7 @@ class SearchEngines(Enum):
     startpage = 'startpage.com'
 
 
-class QueryStatus(Enum):
+class Status(Enum):
     queued = -1
     failed = 0
     success = 1
