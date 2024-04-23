@@ -33,11 +33,14 @@ class GoogleScraper(BaseScraper):
             if anchors:
                 link = anchors[0]['href']
                 title = g.find('h3').text
+                description="-"
                 try:
-                    description = g.find('div', {'data-sncf':'2'}).text
+                    description = g.find('div', {'data-sncf':'1'}).find_all('div')[0].find_all('span')[-1].text
+
+                    # description cleanup
+                    description = description.replace('\xa0', "")
+                    description = description.replace('...', "")
                 except Exception as e:
-                    description = "-"
-                results.append(str(title)+";"+str(link)+';'+str(description))
+                    pass
+                results.append({"title": str(title), "link": str(link), "description": str(description)})
         return results
-
-
