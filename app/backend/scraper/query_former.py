@@ -57,7 +57,7 @@ class Query:
         status (Status): The status of the query (default is Status.queued).
     """
 
-    def __init__(self, concept_name, website=None, search_engine="google") -> None:
+    def __init__(self, concept_name, website=None, search_engine=SearchEngines.google.value) -> None:
         """
         Initialize a Query object with the provided attributes.
 
@@ -78,6 +78,8 @@ class Query:
         Form the URL for the search query based on the specified search engine.
         """
         builder = None
-        if self.search_engine == SearchEngines.google:
+        if self.search_engine == SearchEngines.google.value:
             builder = GoogelLinkFormer()
+        else:
+            raise ValueError(f'Incorrect search engine {self.search_engine}')
         self.url = builder.get_url(self.concept_name, self.website)
