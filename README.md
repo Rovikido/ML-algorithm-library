@@ -1,16 +1,15 @@
-# Neural Network Scraper & Summarizer Documentation
+# Neural Network Library
 
 ## Introduction
 
-The Neural Network Scraper & Summarizer is a Python-based project designed to gather information about neural networks from online sources and summarize it for easy consumption. This documentation provides an overview of the project's functionalities, its components, and how to utilize them.
-
+The Neural Network Library is a Python-based project designed to gather information about neural networks from online sources, sumarize it, and store their sources. 
 ## Components
 
 1. **GoogleScraper:** Responsible for scraping search results from Google based on a specified query. Utilizes the Google Search API to retrieve relevant links and descriptions.
 
 2. **Query:** Helps in forming structured queries for the GoogleScraper. It takes a topic name, a specific search engine (in this case, "sci-hub.se"), and the type of search engine (here, SearchEngines.google.value).
 
-3. **ChatGPTScraperSummarizerStrategy:** Handles the summarization process using the GPT-based ChatGPT model. Leverages the natural language processing capabilities of the model to generate concise summaries.
+3. **ChatGPTScraperSummarizerStrategy:** Handles the summarization process using the GPT-based ChatGPT model.
 
 4. **Context:** Provides a context for the summarization strategy. Encapsulates the strategy and facilitates its usage in the summarization process.
 
@@ -37,12 +36,5 @@ The Neural Network Scraper & Summarizer is a Python-based project designed to ga
 
 ## Dependencies
 
-- This project relies on external libraries such as `requests`, `BeautifulSoup`, and `NLTK` for web scraping and natural language processing tasks.
+- See requerements.txt
 
-## License
-
-This project is licensed under the MIT License. Refer to the `LICENSE` file for more details.
-
-## Contributing
-
-Contributions to the project are welcome. Fork the repository, make changes, and create a pull request for review.
