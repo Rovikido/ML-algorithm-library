@@ -108,7 +108,7 @@ class DB:
         
     @handle_database_errors
     def get_sources_by_topic(self, topic_id):
-        with self.conn.cursor() as cur:
+        with self.conn.cursor() as cur: 
             cur.execute("SELECT * FROM sources WHERE topic_id = %s;", (topic_id,))
             sources_data = cur.fetchall()
             sources = []
