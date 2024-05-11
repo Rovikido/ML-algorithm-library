@@ -27,7 +27,10 @@ class ChatGPTScraperSummarizerStrategy(SummarizerStrategy):
         return cls._instance
 
     def summarize_topic_from_name(self, text) -> str:
-        self.chatgpt.send_prompt_to_chatgpt(f"Summarize the concept of {text} and it`s applications.Be as short and concise as possible. Give me only summary without any introductions, extra replies. Be as short as you physically can")
+        self.chatgpt.send_prompt_to_chatgpt(f"Summarize the concept of {text} and it`s applications.\
+                                            Be as short and concise as possible. \
+                                            Give me only summary without any introductions, extra replies. \
+                                            Be as short as you physically can")
         res = self.chatgpt.return_last_response()
         res = res.replace('ChatGPT\n', "")
         return res

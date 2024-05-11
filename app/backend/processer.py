@@ -6,11 +6,11 @@ from app.backend.summarizer.summarizer import ChatGPTScraperSummarizerStrategy, 
 from app.backend.database.db import DB
 
 
-db = DB()
-db.create_tables()
+# db = DB()
+# db.create_tables()
 
 
-def process_topic(topic_name):
+def process_topic(topic_name, db):
     query = Query(topic_name, "sci-hub.se", SearchEngines.google.value)
     print(query.url)
     scraper = GoogleScraper()
@@ -34,5 +34,5 @@ def process_topic(topic_name):
                         source_description=src['description'])
         db.insert_update_source(source)
 
-process_topic("Deep neural networks")
+# process_topic("Deep neural networks")
 # Query("Machine Learning")

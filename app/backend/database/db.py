@@ -101,7 +101,7 @@ class DB:
             topics_data = cur.fetchall()
             topics=[]
             for topic_data in topics_data:
-                topic_id, topic_name, topic_summary = topic_data
+                topic_id, topic_name, topic_summary = topic_data[:3]
                 topic = Topic(topic_name, topic_summary, topic_id)
                 topics.append(topic)
             return topics
