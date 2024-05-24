@@ -16,7 +16,7 @@ class GoogleScraper(BaseScraper):
             self.proxies = self.load_proxie_list()
     
     def load_proxie_list(self) -> List[str]:
-        pass # TODO: replace with loading proxies list form file and checking connection with them
+        pass
 
     def load_headers(self) -> List[Dict[str, str]]:
         return [{'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0'}]
